@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Heat Safety Monitor</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Construction Site Worker Safety Monitor</h1>
+    <div id="status-badge" class="badge badge-unknown">UNKNOWN</div>
+  </header>
+
+  <main>
+    <section class="readings">
+      <div class="stat">
+        <div class="stat-label">Temperature</div>
+        <div class="stat-value" id="temp-value">--</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Humidity</div>
+        <div class="stat-value" id="humidity-value">--</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Heat Index</div>
+        <div class="stat-value" id="heat-index-value">--</div>
+      </div>
+    </section>
+
+    <section class="meta">
+      <div class="meta-row">
+        <span class="meta-label">Last check-in:</span>
+        <span id="last-checkin">--</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Last update:</span>
+        <span id="last-update">--</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Device:</span>
+        <span id="device-id">--</span>
+      </div>
+    </section>
+
+    <section class="chart-section">
+      <div class="chart-header">
+        <h2>Temp / Heat Index</h2>
+        <div id="range-select" class="range-select" role="group" aria-label="Chart time range">
+          <button type="button" class="range-btn" data-range-min="5">Last 5 min</button>
+          <button type="button" class="range-btn" data-range-min="180">Last 3 hr</button>
+          <button type="button" class="range-btn" data-range-min="1440">Last 24 hr</button>
+        </div>
+      </div>
+      <canvas id="history-chart" height="120"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>CS147 Project &mdash; polls <code>/api/latest</code> every 5s, <code>/api/history</code> every 30s.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

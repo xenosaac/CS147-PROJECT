@@ -1,0 +1,15 @@
+{
+  "name": "heat-safety-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend for the Construction Site Worker Safety Monitor (CS147 project) — receives ESP32 readings and serves the live dashboard.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4",
+    "express": "^4.19.2"
+  }
+}
