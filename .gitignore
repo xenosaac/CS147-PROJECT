@@ -1,0 +1,15 @@
+*.md
+firmware/build/
+firmware/include/config.h
+backend/node_modules/
+backend/.env
+backend/data/
+hw_validation/
+contract/
+*.docx
+*.pdf
+*.tex
+*.png
+wiring-diagram.html
+breadboard-diagram.html
+.DS_Store

@@ -1,0 +1,26 @@
+// config.h.example — site-specific config template; copy to config.h and fill in placeholders before flashing.
+
+#pragma once
+
+// ---------------------------------------------------------------------------
+// WiFi credentials (STA mode). PLACEHOLDERS — fill in before flashing.
+// ---------------------------------------------------------------------------
+#define WIFI_SSID     "YOUR_WIFI_SSID_HERE"
+#define WIFI_PASSWORD "YOUR_WIFI_PASSWORD_HERE"
+
+// Backend server. SERVER_PORT defaults to 3147 — update if the backend's PORT env var was overridden.
+#define SERVER_HOST "YOUR_SERVER_HOST_OR_IP_HERE"
+#define SERVER_PORT 3147
+
+// Shared bearer token — must match the backend's DEVICE_TOKEN exactly (course-project-grade only).
+#define DEVICE_TOKEN "YOUR_DEVICE_TOKEN_HERE"
+
+// ---------------------------------------------------------------------------
+// Device identity — constant per device, sent as "deviceId" in every POST.
+// ---------------------------------------------------------------------------
+#define DEVICE_ID "worker-station-01"
+
+// Display toggle — set to 0 to fully disable TFT_eSPI; everything else must keep working with this at 0.
+#ifndef ENABLE_DISPLAY
+#define ENABLE_DISPLAY 1
+#endif
